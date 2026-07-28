@@ -1,0 +1,94 @@
+/* ── SHARED STYLES ── */
+:root {
+  --bg: #f9f9f7;
+  --white: #ffffff;
+  --text: #1a1a1a;
+  --muted: #666;
+  --border: #e5e5e0;
+  --accent: #1a1a1a;
+  --tag-bg: #f0f0ec;
+  --sans: 'Inter', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 1000px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-logo {
+  font-size: 16px; font-weight: 700;
+  color: var(--text); text-decoration: none; letter-spacing: -0.01em;
+}
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a {
+  font-size: 13px; color: var(--muted);
+  text-decoration: none; transition: color 0.2s; font-weight: 500;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* CONTAINER */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 32px; }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+footer a { color: var(--text); text-decoration: none; }
+
+/* TAGS */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.tag {
+  font-size: 11px; font-weight: 500;
+  background: var(--tag-bg); color: #444;
+  padding: 4px 10px; border-radius: 100px;
+}
+
+/* IMAGE PLACEHOLDER */
+.img-placeholder {
+  background: #e8e8e4;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: #aaa; font-size: 13px; font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px; border-radius: 4px;
+  font-size: 13px; font-weight: 500;
+  text-decoration: none; transition: all 0.2s;
+  font-family: var(--sans); border: none; cursor: pointer;
+}
+.btn-dark { background: var(--text); color: #fff; }
+.btn-dark:hover { background: #333; }
+.btn-outline {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover { border-color: #999; }
+
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .container { padding: 0 20px; }
+}
